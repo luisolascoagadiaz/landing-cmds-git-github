@@ -1,65 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Cmds Git y GitHub</title>
+    <title>Login Premium - Experiencia Visual</title>
+    <style>
+        /* Animación sutil para el fondo */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-200 p-4">
-    <main class="max-w-3xl mx-auto">
-        <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-5 mb-6">
-            <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">01</div>
-            <h3 class="font-bold text-white uppercase text-xs">Inicializar Proyecto</h3>
-            <div class="bg-black/60 p-4 rounded font-mono text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
-                mkdir proyecto-git<br>
-                cd proyecto-git <br>
-                git init
-            </div>          
+<body class="bg-gradient-to-br from-violet-600 via-indigo-700 to-blue-600 animate-gradient flex items-center justify-center min-h-screen p-4 relative overflow-hidden">
+
+    <div class="absolute -top-20 -left-20 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+    <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+
+    <div class="relative bg-white/10 backdrop-blur-xl p-10 md:p-12 rounded-3xl shadow-2xl w-full max-w-lg border border-white/20 z-10">
+        
+        <div class="text-center mb-12">
+            <div class="mx-auto w-16 h-16 bg-gradient-to-tr from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg mb-6 ring-4 ring-white/10">
+                <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3c1.78 0 3.442.533 4.834 1.454M19.897 15.105a10.002 10.002 0 01-2.012 5.392M16.198 19.24c.731-.112 1.43-.283 2.091-.502M16.05 4.972A9.986 9.986 0 0115 12c0 2.21-.896 4.21-2.344 5.658M9 12c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"></path>
+                </svg>
+            </div>
+            <h1 class="text-4xl font-extrabold text-white tracking-tighter">Bienvenido</h1>
+            <p class="text-blue-100 text-lg mt-2 font-light">Accede a tu panel personal</p>
         </div>
 
-        <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-5 mb-6">
-            <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">02</div>
-            <h3 class="font-bold text-white uppercase text-xs">Primer commit local</h3>
-            <div class="bg-black/60 p-4 rounded font-mono text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
-                git add .<br>
-                git commit -m "proyecto base"
-            </div>          
-        </div>
+        <form action="#" class="space-y-7">
+            <div class="relative group">
+                <label for="email" class="absolute -top-3 left-4 bg-violet-700/50 backdrop-blur-sm px-2 text-xs font-medium text-blue-100 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300">
+                    Correo Electrónico
+                </label>
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-blue-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
+                </div>
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="tucorreo@ejemplo.com"
+                    class="w-full pl-12 pr-4 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:bg-white/10 transition duration-300 shadow-inner"
+                    required
+                >
+            </div>
 
-        <div class="bg-slate-800/40 border border-dashed border-amber-500 rounded-xl p-5 mb-6">
-            <div class="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">02</div>
-            <h3 class="font-bold text-amber-400 uppercase text-xs italic text-sm">Crear repo en Github (Web)</h3>
-            <p class="text-slate-500 text-[11px] mt-1 italic">Crear un repositorio remoto en Github</p>         
-        </div>
+            <div>
+                <div class="relative group">
+                    <label for="password" class="absolute -top-3 left-4 bg-violet-700/50 backdrop-blur-sm px-2 text-xs font-medium text-blue-100 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300">
+                        Contraseña
+                    </label>
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-blue-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 002-2H4a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="••••••••"
+                        class="w-full pl-12 pr-4 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:bg-white/10 transition duration-300 shadow-inner"
+                        required
+                    >
+                </div>
+                <div class="flex justify-end mt-2">
+                    <a href="#" class="text-xs font-medium text-cyan-300 hover:text-cyan-200 transition">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
 
-        <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-5 mb-6">
-            <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">04</div>
-            <h3 class="font-bold text-white uppercase text-xs">Vincular con la nube (github)</h3>
-            <div class="bg-black/60 p-4 rounded font-mono text-indigo-300 text-sm border-l-4 border-indigo-400 mt-3">
-                git remote add origin <span class="text-white">URL_DEL_REPO_REMOTO</span> 
-            </div>          
-        </div>
+            <button 
+                type="submit" 
+                class="w-full relative group overflow-hidden bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 p-px rounded-xl shadow-lg shadow-cyan-950/30 hover:shadow-cyan-500/50 transition-all duration-300 active:scale-[0.98]"
+            >
+                <div class="bg-gray-950/10 group-hover:bg-transparent py-4 rounded-xl transition duration-300">
+                    <span class="relative text-white font-bold text-lg tracking-tight flex items-center justify-center gap-2">
+                        Iniciar Sesión Segura
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </div>
+            </button>
+        </form>
 
-        <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-5 mb-6">
-            <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">05</div>
-            <h3 class="font-bold text-white uppercase text-xs">El gran push</h3>
-            <div class="bg-black/60 p-4 rounded font-mono text-indigo-300 text-sm border-l-4 border-white mt-3">
-                <span class="text-white">git push origin master</span> 
-            </div>          
+        <div class="mt-12 pt-8 border-t border-white/10 text-center relative">
+            <p class="text-sm text-blue-100">
+                ¿Nuevo en nuestra plataforma? 
+                <a href="#" class="font-semibold text-cyan-300 hover:text-cyan-100 transition group relative inline-block">
+                    Crea una cuenta ahora
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+            </p>
         </div>
+    </div>
 
-        <div class="bg-slate-800/40 border border-slate-700 rounded-xl p-5 mb-6">
-            <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">06</div>
-            <h3 class="font-bold text-white uppercase text-xs">Actualización (Nuevos cambios)</h3>
-            <div class="bg-black/60 p-4 rounded font-mono text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
-                git add .<br>
-                git commit -m "nuevo cambio" <br>
-                git push origin master
-            </div>          
-        </div>
-
-    </main>
 </body>
 </html>
